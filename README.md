@@ -16,9 +16,8 @@
 ├── train_seg.py # 训练分割模型
 ├── train_detect.py # 训练检测模型
 ├── reader.py # 读数
-├── data/
-    ├── meter_det/ # 表计检测数据集
-    ├── meter_seg/ # 指针和刻度分割数据集
+├── meter_det/ # 表计检测数据集
+├── meter_seg/ # 指针和刻度分割数据集
 ├── results/ # 模型输出
 ├── checkpoints/ # 预训练模型
 ```
@@ -38,31 +37,43 @@ python train_seg.py
 ```bash
 python reader.py --det_model_dir output/ppyolov2_r50vd_dcn/best_model \
                  --seg_model_dir output/deeplabv3p_r50vd/best_model/ \
-                 --image_dir meter_det/test/
+                 --image_dir data/meter_det/test/
 ```
 
 ## 检测 PP-YOLOv2
-
+> !TODO: 补充原理
 
 ## 分割 DeepLabv3+
-
+> !TODO: 补充原理
 
 ## 读数 
-
+> !TODO: 补充原理
 
 ## 实验结果及参数
 ### 目标检测
-| 模型 | mAP | 参数 |
+| 模型 | bbox_mmap | 参数 |
 | :---: | :---: | :---: |
-| PP-YOLOv2 | 0.911 | [下载](https://paddledet.bj.bcebos.com/models/ppyolov2_r50vd_dcn.tar) |
+| PP-YOLOv2 | 100% | [下载](https://drive.google.com/file/d/1Twnf-m_bbJzN8ZazhWyuvYuqPIpuvu5x/view?usp=sharing) |
 
 ### 分割
 | 模型 | mIoU | 参数 |
 | :---: | :---: | :---: |
-| DeepLabv3+ | 0.911 | [下载](https://paddlesseg.bj.bcebos.com/models/deeplabv3p_r50vd.tar) |
+| DeepLabv3+ | 0.8443 | [下载](https://drive.google.com/file/d/1_dpVGaVop6ZpEW4JTRp1HjjRtDmz8JqC/view?usp=sharing) |
 
-### 部分结果
+### 实验结果
+对测试集中的所有图片进行测试，最终在58张测试图片中，只有2张图片的读数错误，预测准确率达到96.55%
 
+部分实验结果如下图所示:
+<table>
+  <tr>
+    <td><img src="./imgs/demo1.jpg" alt="Image 1"></td>
+    <td><img src="./imgs/demo2.jpg" alt="Image 2"></td>
+  </tr>
+  <tr>
+    <td><img src="./imgs/demo3.jpg" alt="Image 3"></td>
+    <td><img src="./imgs/demo4.jpg" alt="Image 4"></td>
+  </tr>
+</table>
 
 ## 参考文献
 - [1] [DeepLabv3+](https://arxiv.org/abs/1802.02611)

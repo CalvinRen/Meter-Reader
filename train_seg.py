@@ -45,7 +45,7 @@ model = pdx.seg.DeepLabV3P(
 # API说明：https://github.com/PaddlePaddle/PaddleX/blob/release/2.0-rc/paddlex/cv/models/segmenter.py#L150
 # 各参数介绍与调整说明：https://paddlex.readthedocs.io/zh_CN/develop/appendix/parameters.html
 model.train(
-    num_epochs=20,
+    num_epochs=50,
     train_dataset=train_dataset,
     train_batch_size=4,
     eval_dataset=eval_dataset,
