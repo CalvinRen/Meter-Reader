@@ -24,16 +24,44 @@
 ```
 
 ## 项目运行
+### 1. 目标检测训练
+```bash
+python train_detect.py
+```
 
-## 目标检测
+### 2. 分割训练
+```bash
+python train_seg.py
+```
+
+### 3. 读数
+```bash
+python reader.py --det_model_dir output/ppyolov2_r50vd_dcn/best_model \
+                 --seg_model_dir output/deeplabv3p_r50vd/best_model/ \
+                 --image_dir meter_det/test/
+```
+
+## 检测 PP-YOLOv2
 
 
-## 分割 PP-YOLOv2
+## 分割 DeepLabv3+
 
 
-## 读数 DeepLabv3+
+## 读数 
+
 
 ## 实验结果及参数
+### 目标检测
+| 模型 | mAP | 参数 |
+| :---: | :---: | :---: |
+| PP-YOLOv2 | 0.911 | [下载](https://paddledet.bj.bcebos.com/models/ppyolov2_r50vd_dcn.tar) |
+
+### 分割
+| 模型 | mIoU | 参数 |
+| :---: | :---: | :---: |
+| DeepLabv3+ | 0.911 | [下载](https://paddlesseg.bj.bcebos.com/models/deeplabv3p_r50vd.tar) |
+
+### 部分结果
 
 
 ## 参考文献
